@@ -8,7 +8,16 @@ public class DAOinit {
         //  instancia o Scanner para captar dados passados por um usuário ou pela própria aplicação.
         Scanner console = new Scanner (System.in);
         
+        ProdutoDao pdao = new ProdutoDaoImpl();
+        pdao.listaCategorias();
+        
         //  Obtem Valores de Entrada do usuário
+              
+        System.out.println("Escolha a categoria: ");
+        String categoria = console.nextLine();
+        pdao.listaProdutos(Integer.parseInt(categoria));
+        
+        System.out.println("Senha: ");
         System.out.println("Email: ");
         String email = console.nextLine();
         System.out.println("Senha: ");
