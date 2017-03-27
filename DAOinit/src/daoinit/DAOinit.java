@@ -21,9 +21,44 @@ public class DAOinit {
         //  Validação do Booleano Retornado pelo Método validaLogin da classe ClienteDaoImpl.java
         if(acesso){
             System.out.println("Acesso Permitido");
+            
+            dao.listaClientes();
+            
+             System.out.println("Deseja cadastrar um cliente? S para SIM ");
+             
+             String cadastrar = console.nextLine();
+             System.out.println(cadastrar);
+             
+             if("s".equalsIgnoreCase(cadastrar)){
+                 
+                 System.out.println("Nome: ");
+                 String nome = console.nextLine();
+                 
+                 System.out.println("Email: ");
+                 String cliemail = console.nextLine();
+                                  
+                 System.out.println("Senha: ");
+                 String clisenha = console.nextLine();
+                 
+                 System.out.println("CPF: ");
+                 String cpf = console.nextLine();
+                                  
+                 Cliente cliente = new Cliente();
+                 cliente.nome = nome;
+                 cliente.email = cliemail;
+                 cliente.senha = clisenha;
+                 cliente.cpf = cpf;
+                 
+                 dao.cadastraClientes(cliente);
+                 
+             } else {
+                 System.out.println("Nada feito... ");
+             }
+                          
         } else {
             System.out.println("Acesso Negado");
         }
-        
     }
+ 
+    
 }
