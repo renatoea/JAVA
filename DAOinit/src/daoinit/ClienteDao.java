@@ -10,4 +10,6 @@ public interface ClienteDao {
 
     public void cadastraClientes(Cliente cliente);
     
+    // MODIFICADO
+    
 }
